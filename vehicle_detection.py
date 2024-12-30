@@ -3,6 +3,10 @@ import time
 import joblib  # To load the saved model
 import numpy as np
 from ultralytics import YOLO
+import logging
+
+# Suppress logs from ultralytics
+logging.getLogger('ultralytics').setLevel(logging.ERROR)
 
 # Load the trained RandomForestRegressor model
 model_rf = joblib.load('traffic_timing_model.pkl')
